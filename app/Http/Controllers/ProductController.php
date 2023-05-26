@@ -38,5 +38,8 @@ class ProductController extends Controller
         $product->weight= $request->weight;
         $product->price = $request->price;
         $product->save();
+        return response()->json([
+            'status'    => 'success',
+        ]);
     }
 }

@@ -13,7 +13,7 @@
 
 <script>
     $(document).ready(function() {
-        $(document).on('click','.add_product', function(e) {
+        $(document).on('click', '.add_product', function(e) {
             e.preventDefault();
             let name = $('#name').val();
             let color = $('#color').val();
@@ -30,7 +30,10 @@
                     price: price
                 },
                 success: function(res) {
-
+                    if (res.status == 'success') {
+                        $('#addModal').modal('hide');
+                        $('#addProductForm')[0].reset();
+                    }
                 },
                 error: function(err) {
                     let error = err.responseJSON;
