@@ -48,7 +48,10 @@
                                             data-price="{{ $product->price }}">
                                             <i class="las la-times"></i>
                                         </a>
-                                        <a href="" class="btn btn-success"><i class="las la-edit"></i></a>
+                                        <a href="" class="btn btn-success delete_product"
+                                            data-id="{{ $product->id }}">
+                                            <i class="las la-edit"></i>
+                                        </a>
                                         <a href="" class="btn btn-info"><i class="las la-eye"></i></a>
                                     </td>
                                     <td>{{ $product->price }}</td>

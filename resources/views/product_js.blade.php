@@ -13,6 +13,7 @@
 
 <script>
     $(document).ready(function() {
+        //Insert product data
         $(document).on('click', '.add_product', function(e) {
             e.preventDefault();
             let name = $('#name').val();
@@ -97,6 +98,27 @@
                     })
                 }
             });
+        });
+
+        // Delete product data
+        $(document).on('click', '.delete_product', function(e) {
+            e.preventDefault();
+            let product_id = $(this).data('id');
+
+            if (confirm('Are you sure to delete product ??')) {
+                $.ajax({
+                    url: "{{ route('product.update') }}",
+                    method: 'post',
+                    data: {
+                        product_id: product_id,
+                    },
+                    success: function(res) {
+                        if (res.status == 'success') {
+                            $('.table').load(location.href + ' .table');
+                        }
+                    }
+                });
+            }
         });
     });
 </script>
