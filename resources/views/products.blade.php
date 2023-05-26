@@ -23,7 +23,8 @@
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <h2 class="my-4 text-center mt-5">Laravel 10 Ajax Crud</h2>
-                <a href="" class="btn btn-success my-3" data-bs-toggle="modal" data-bs-target="#addModal">ADD Product</a>
+                <a href="" class="btn btn-success my-3" data-bs-toggle="modal" data-bs-target="#addModal">ADD
+                    Product</a>
                 <div class="table-data">
                     <table class="table table-bordered">
                         <thead>
@@ -37,18 +38,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <a class="btn btn-danger" href=""><i class="las la-times"></i></a>
-                                    <a class="btn btn-success" href=""><i class="las la-edit"></i></a>
-                                    <a class="btn btn-info" href=""><i class="las la-eye"></i></a>
-                                </td>
-                                <td>650 TK</td>
-                                <td>2 KG</td>
-                                <td>Green</td>
-                                <td>Apple</td>
-                                <th scope="row">1</th>
-                            </tr>
+                            @foreach ($products as $key => $product)
+                                <tr>
+                                    <td>
+                                        <a class="btn btn-danger" href=""><i class="las la-times"></i></a>
+                                        <a class="btn btn-success" href=""><i class="las la-edit"></i></a>
+                                        <a class="btn btn-info" href=""><i class="las la-eye"></i></a>
+                                    </td>
+                                    <td>{{ $product->price }}</td>
+                                    <td>{{ $produt->weight }}</td>
+                                    <td>{{ $product->color }}</td>
+                                    <td>{{ $product->name }}</td>
+                                    <th scope="row">{{ $key + 1 }}</th>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
