@@ -17,7 +17,7 @@ return new class extends Migration
             $table->double('price');
             $table->string('color', 30);
             $table->string('weight');
-            $table->string('durability');
+            $table->string('durability')->nullable();
             $table->timestamps();
         });
     }

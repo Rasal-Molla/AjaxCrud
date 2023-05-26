@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -30,5 +31,12 @@ class ProductController extends Controller
                 'name.numeric'      => 'Price value numeric',
             ]
         );
+
+        $product        = new Product();
+        $product->name  = $request->name;
+        $product->color = $request->color;
+        $product->weight= $request->weight;
+        $product->price = $request->price;
+        $product->save();
     }
 }

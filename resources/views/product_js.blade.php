@@ -13,7 +13,7 @@
 
 <script>
     $(document).ready(function() {
-        $(document).on('click', '.add_product', function(e) {
+        $(document).on('click','.add_product', function(e) {
             e.preventDefault();
             let name = $('#name').val();
             let color = $('#color').val();
@@ -35,7 +35,9 @@
                 error: function(err) {
                     let error = err.responseJSON;
                     $.each(error.errors, function(index, value) {
-                        $('.errMessageContainer').append('<span class="text-danger">'+value+'</span>'+'</br>')
+                        $('.errMessageContainer').append(
+                            '<span class="text-danger">' + value + '</span>' +
+                            '</br>')
                     })
                 }
             });
