@@ -46,5 +46,20 @@
                 }
             });
         });
+
+        // Show product value in update form
+        $document().on('click', '.update_product_form', function() {
+            let id = $(this).data('id');
+            let name = $(this).data('name');
+            let color = $(this).data('color');
+            let weight = $(this).data('weight');
+            let price = $(this).data('price');
+
+            $('#up_id').val(id);
+            $('#up_name').val(name);
+            $('#up_color').val(color);
+            $('#up_weight').val(weight);
+            $('#up_price').val(price);
+        })
     });
 </script>

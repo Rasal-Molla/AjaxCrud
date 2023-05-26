@@ -41,9 +41,14 @@
                             @foreach ($products as $key => $product)
                                 <tr>
                                     <td>
-                                        <a class="btn btn-danger" href=""><i class="las la-times"></i></a>
-                                        <a class="btn btn-success" href=""><i class="las la-edit"></i></a>
-                                        <a class="btn btn-info" href=""><i class="las la-eye"></i></a>
+                                        <a href="" class="btn btn-danger update_product_form" data-bs-toggle="modal"
+                                            data-bs-target="#updateModal" data-id="{{ $product->id }}"
+                                            data-name="{{ $product->name }}" data-color="{{ $product->color }}"
+                                            data-weight="{{ $product->weight }}" data-price="{{ $product->price }}">
+                                            <i class="las la-times"></i>
+                                        </a>
+                                        <a href="" class="btn btn-success"><i class="las la-edit"></i></a>
+                                        <a href="" class="btn btn-info"><i class="las la-eye"></i></a>
                                     </td>
                                     <td>{{ $product->price }}</td>
                                     <td>{{ $produt->weight }}</td>
