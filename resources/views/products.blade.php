@@ -23,6 +23,7 @@
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <h2 class="my-4 text-center mt-5">Laravel 10 Ajax Crud</h2>
+                <a href="" class="btn btn-success my-3" data-bs-toggle="modal" data-bs-target="#addModal">ADD Product</a>
                 <div class="table-data">
                     <table class="table table-bordered">
                         <thead>
@@ -54,7 +55,7 @@
             </div>
         </div>
     </div>
-
+    @include('productModal')
     @include('product_js')
 
 </body>
