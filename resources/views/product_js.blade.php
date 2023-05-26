@@ -61,5 +61,42 @@
             $('#up_weight').val(weight);
             $('#up_price').val(price);
         })
+
+        // Update product data
+        $(document).on('click', '.update_product', function(e) {
+            e.preventDefault();
+            let up_id = $('#up_id').val();
+            let up_name = $('#up_name').val();
+            let up_color = $('#up_color').val();
+            let up_weight = $('#up_weight').val();
+            let up_price = $('#up_price').val();
+
+            $.ajax({
+                url: "{{ route('product.update') }}",
+                method: 'post',
+                data: {
+                    up_id: up_id,
+                    up_name: up_name,
+                    up_color: up_color,
+                    up_weight: up_weight,
+                    up_price: up_price
+                },
+                success: function(res) {
+                    if (res.status == 'success') {
+                        $('#updateModal').modal('hide');
+                        $('#updateProductForm')[0].reset();
+                        $('.table').load(location.href + ' .table');
+                    }
+                },
+                error: function(err) {
+                    let error = err.responseJSON;
+                    $.each(error.errors, function(index, value) {
+                        $('.errMessageContainer').append(
+                            '<span class="text-danger">' + value + '</span>' +
+                            '</br>')
+                    })
+                }
+            });
+        });
     });
 </script>
