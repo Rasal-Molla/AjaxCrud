@@ -1,6 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLable"
-    aria-hidden="true">
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLable" aria-hidden="true">
     <form action="" method="post" id="addProductForm">
         @csrf
         <div class="modal-dialog" role="document">

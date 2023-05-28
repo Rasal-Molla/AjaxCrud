@@ -52,8 +52,7 @@
                                             data-weight="{{ $product->weight }}" data-price="{{ $product->price }}">
                                             <i class="las la-edit"></i>
                                         </a>
-                                        <a class="btn btn-danger delete_product"
-                                            data-id="{{ $product->id }}">
+                                        <a class="btn btn-danger delete_product" data-id="{{ $product->id }}">
                                             <i class="las la-times"></i>
                                         </a>
                                     </td>
