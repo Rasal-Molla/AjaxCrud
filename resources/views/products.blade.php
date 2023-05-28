@@ -29,21 +29,26 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th scope="col">Action</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Weight</th>
-                                <th scope="col">Color</th>
-                                <th scope="col">Name</th>
                                 <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Color</th>
+                                <th scope="col">Weight</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($products as $key => $product)
                                 <tr>
-                                    <td>
+                                    <th scope="row">{{ $key + 1 }}</th>
+                                    <td>{{ $product->name }}</td>
+                                        <td>{{ $product->color }}</td>
+                                        <td>{{ $product->weight }}</td>
+                                        <td>{{ $product->price }}</td>
+                                        <td>
                                         <a class="btn btn-success update_product_form" data-bs-toggle="modal"
-                                            data-bs-target="#updateModal" data-id="{{ $product->id }}"
-                                            data-name="{{ $product->name }}" data-color="{{ $product->color }}"
+                                        data-bs-target="#updateModal" data-id="{{ $product->id }}"
+                                        data-name="{{ $product->name }}" data-color="{{ $product->color }}"
                                             data-weight="{{ $product->weight }}" data-price="{{ $product->price }}">
                                             <i class="las la-edit"></i>
                                         </a>
@@ -52,11 +57,6 @@
                                             <i class="las la-times"></i>
                                         </a>
                                     </td>
-                                    <td>{{ $product->price }}</td>
-                                    <td>{{ $product->weight }}</td>
-                                    <td>{{ $product->color }}</td>
-                                    <td>{{ $product->name }}</td>
-                                    <th scope="row">{{ $key + 1 }}</th>
                                 </tr>
                             @endforeach
                         </tbody>
