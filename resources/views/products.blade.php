@@ -42,17 +42,17 @@
                                 <tr>
                                     <th scope="row">{{ $key + 1 }}</th>
                                     <td>{{ $product->name }}</td>
-                                        <td>{{ $product->color }}</td>
-                                        <td>{{ $product->weight }}</td>
-                                        <td>{{ $product->price }}</td>
-                                        <td>
+                                    <td>{{ $product->color }}</td>
+                                    <td>{{ $product->weight }}</td>
+                                    <td>{{ $product->price }}</td>
+                                    <td>
                                         <a class="btn btn-success update_product_form" data-bs-toggle="modal"
-                                        data-bs-target="#updateModal" data-id="{{ $product->id }}"
-                                        data-name="{{ $product->name }}" data-color="{{ $product->color }}"
+                                            data-bs-target="#updateModal" data-id="{{ $product->id }}"
+                                            data-name="{{ $product->name }}" data-color="{{ $product->color }}"
                                             data-weight="{{ $product->weight }}" data-price="{{ $product->price }}">
                                             <i class="las la-edit"></i>
                                         </a>
-                                        <a href="" class="btn btn-danger delete_product"
+                                        <a class="btn btn-danger delete_product"
                                             data-id="{{ $product->id }}">
                                             <i class="las la-times"></i>
                                         </a>

@@ -49,7 +49,7 @@
         });
 
         // Show product value in update form
-        $document().on('click', '.update_product_form', function() {
+        $(document).on('click', '.update_product_form', function() {
             let id = $(this).data('id');
             let name = $(this).data('name');
             let color = $(this).data('color');
@@ -104,15 +104,15 @@
         $(document).on('click', '.delete_product', function(e) {
             e.preventDefault();
             let product_id = $(this).data('id');
-
             if (confirm('Are you sure to delete product ??')) {
                 $.ajax({
-                    url: "{{ route('product.update') }}",
+                    url: "{{ route('product.delete') }}",
                     method: 'post',
                     data: {
                         product_id: product_id,
                     },
                     success: function(res) {
+                        console.log(res)
                         if (res.status == 'success') {
                             $('.table').load(location.href + ' .table');
                         }

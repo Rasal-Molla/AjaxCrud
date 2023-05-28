@@ -55,7 +55,6 @@ class ProductController extends Controller
             ],
             [
                 'up_name.required'     => 'Name is required',
-                'up_price.unique'      => 'Name is exists',
                 'up_color'             => 'Color is required',
                 'up_weight.required'   => 'Weight is required',
                 'up_name.numeric'      => 'Weight value numeric',
