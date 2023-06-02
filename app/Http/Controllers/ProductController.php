@@ -15,6 +15,7 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        // Custom validation
         $request->validate(
             [
                 'name'      => 'required|unique:products',
@@ -33,6 +34,7 @@ class ProductController extends Controller
             ]
         );
 
+        // Product Create
         $product            = new Product();
         $product->name      = $request->name;
         $product->color     = $request->color;
