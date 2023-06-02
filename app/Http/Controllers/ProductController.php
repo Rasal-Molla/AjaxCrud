@@ -48,6 +48,7 @@ class ProductController extends Controller
 
     public function update(Request $request)
     {
+        // Custom validation
         $request->validate(
             [
                 'up_name'      => 'required|unique:products,name,' . $request->up_id,
@@ -65,6 +66,7 @@ class ProductController extends Controller
             ]
         );
 
+        // Product update
         Product::where('id', $request->up_id)->update([
             'name'      => $request->up_name,
             'color'     => $request->up_color,
